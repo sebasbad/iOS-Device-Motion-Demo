@@ -15,6 +15,7 @@
 		4125E9781CC53F3B0062BFA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4125E9761CC53F3B0062BFA3 /* LaunchScreen.storyboard */; };
 		4125E9821CC5F3B30062BFA3 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4125E9801CC5F3B30062BFA3 /* Fabric.framework */; };
 		4125E9831CC5F3B30062BFA3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4125E9811CC5F3B30062BFA3 /* Crashlytics.framework */; };
+		4125E98C1CC6AC1B0062BFA3 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4125E98B1CC6AC1B0062BFA3 /* dog.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4125E9791CC53F3B0062BFA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4125E9801CC5F3B30062BFA3 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4125E9811CC5F3B30062BFA3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		4125E98B1CC6AC1B0062BFA3 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				4125E9741CC53F3B0062BFA3 /* Assets.xcassets */,
 				4125E9761CC53F3B0062BFA3 /* LaunchScreen.storyboard */,
 				4125E9791CC53F3B0062BFA3 /* Info.plist */,
+				4125E98B1CC6AC1B0062BFA3 /* dog.jpg */,
 				4125E9681CC53F3B0062BFA3 /* Supporting Files */,
 			);
 			path = "Device Motion Demo";
@@ -145,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4125E98C1CC6AC1B0062BFA3 /* dog.jpg in Resources */,
 				4125E9781CC53F3B0062BFA3 /* LaunchScreen.storyboard in Resources */,
 				4125E9751CC53F3B0062BFA3 /* Assets.xcassets in Resources */,
 				4125E9731CC53F3B0062BFA3 /* Main.storyboard in Resources */,
@@ -339,6 +343,7 @@
 				4125E97E1CC53F3B0062BFA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
