@@ -31,6 +31,9 @@
                             <constraint firstItem="jw5-On-JEe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XzB-Tk-zYg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="jw5-On-JEe" id="Fda-59-tIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
