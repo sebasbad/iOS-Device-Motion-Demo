@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) CMMotionManager *coreMotionManager;
 
+@property (strong, nonatomic) NSArray *images;
+
 @end
 
 @implementation ViewController
@@ -23,6 +25,7 @@
     [super viewDidLoad];
 
     self.imageView.image = [UIImage imageNamed:@"dog.jpg"];
+    self.images = @[[UIImage imageNamed:@"dog.jpg"], [UIImage imageNamed:@"lemur_selfie.jpg"], [UIImage imageNamed:@"monkey_smile.jpg"], [UIImage imageNamed:@"tiny_pig.jpg"]];
     
     self.coreMotionManager = [[CMMotionManager alloc] init];
     [self.coreMotionManager startDeviceMotionUpdates];
