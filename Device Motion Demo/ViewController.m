@@ -38,7 +38,7 @@
         double x = deviceMotion.gravity.x;
         double y = deviceMotion.gravity.y;
         
-        double rotation = -atan2(x, y);
+        double rotation = -atan2(x, -y);
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             /* Update UI here */
