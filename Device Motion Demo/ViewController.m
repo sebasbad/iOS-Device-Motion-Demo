@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) CMMotionManager *coreMotionManager;
 
+@property (strong, nonatomic) NSArray *images;
+
 @end
 
 @implementation ViewController
@@ -23,6 +25,9 @@
     [super viewDidLoad];
 
     self.imageView.image = [UIImage imageNamed:@"dog.jpg"];
+    self.images = @[[UIImage imageNamed:@"dog.jpg"], [UIImage imageNamed:@"lemur_selfie.jpg"], [UIImage imageNamed:@"monkey_smile.jpg"], [UIImage imageNamed:@"tiny_pig.jpg"]];
+    
+    [self chooseImage:0.0];
     
     self.coreMotionManager = [[CMMotionManager alloc] init];
     [self.coreMotionManager startDeviceMotionUpdates];
@@ -33,18 +38,50 @@
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
-    [self.coreMotionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
+//    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXArbitraryZVertical;
+    // x corrected using magnetometer data
+//    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXArbitraryCorrectedZVertical;
+    // x reference is magnetic north, based on the magnetometer
+//    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXMagneticNorthZVertical;
+    // x reference is north using location sensors: accelerometer, gyroscope, magnetometer
+    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXTrueNorthZVertical;
+    
+    [self.coreMotionManager startDeviceMotionUpdatesUsingReferenceFrame:frame toQueue:queue withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
         /* do work here */
-        double x = deviceMotion.gravity.x;
-        double y = deviceMotion.gravity.y;
-        
-        double rotation = -atan2(x, -y);
+        double yaw = deviceMotion.attitude.yaw;
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             /* Update UI here */
-            weakSelf.imageView.transform = CGAffineTransformMakeRotation(rotation);
+            weakSelf.imageView.transform = CGAffineTransformMakeRotation(yaw);
+            [self chooseImage:yaw];
         }];
     }];
+}
+
+- (void)chooseImage:(double)yaw {
+    // yaw in radians
+    NSLog(@"%f %f", yaw, M_PI_4);
+    
+    if (M_PI_4 >= yaw) {
+        if (-M_PI_4 <= yaw) {
+            // between -45 and 45 degrees
+            self.imageView.image = self.images[0];
+        } else if (-3.0 * M_PI_4 <= yaw) {
+            // between -45 and -135 degrees
+            self.imageView.image = self.images[1];
+        } else {
+            // between -135 and -225 degrees
+            self.imageView.image = self.images[2];
+        }
+    } else {
+        if (3.0 * M_PI_4 >= yaw) {
+            // between 135 and 225 degrees
+            self.imageView.image = self.images[3];
+        } else {
+            // between 225 and 315 degrees
+            self.imageView.image = self.images[2];
+        }
+    }
 }
 
 @end
