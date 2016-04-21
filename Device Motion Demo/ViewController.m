@@ -50,4 +50,30 @@
     }];
 }
 
+- (void)chooseImage:(double)yaw {
+    // yaw in radians
+    NSLog(@"%f %f", yaw, M_PI_4);
+    
+    if (M_PI_4 >= yaw) {
+        if (-M_PI_4 <= yaw) {
+            // between -45 and 45 degrees
+            self.imageView.image = self.images[0];
+        } else if (-3.0 * M_PI_4 <= yaw) {
+            // between -45 and -135 degrees
+            self.imageView.image = self.images[1];
+        } else {
+            // between -135 and -225 degrees
+            self.imageView.image = self.images[2];
+        }
+    } else {
+        if (3.0 * M_PI_4 >= yaw) {
+            // between 135 and 225 degrees
+            self.imageView.image = self.images[3];
+        } else {
+            // between 225 and 315 degrees
+            self.imageView.image = self.images[2];
+        }
+    }
+}
+
 @end
