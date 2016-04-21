@@ -38,16 +38,16 @@
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
-    [self.coreMotionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
+    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXArbitraryZVertical;
+    
+    [self.coreMotionManager startDeviceMotionUpdatesUsingReferenceFrame:frame toQueue:queue withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
         /* do work here */
-        double x = deviceMotion.gravity.x;
-        double y = deviceMotion.gravity.y;
-        
-        double rotation = -atan2(x, -y);
+        double yaw = deviceMotion.attitude.yaw;
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             /* Update UI here */
-            weakSelf.imageView.transform = CGAffineTransformMakeRotation(rotation);
+            weakSelf.imageView.transform = CGAffineTransformMakeRotation(yaw);
+            [self chooseImage:yaw];
         }];
     }];
 }
