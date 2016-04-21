@@ -38,7 +38,13 @@
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
-    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXArbitraryZVertical;
+//    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXArbitraryZVertical;
+    // x corrected using magnetometer data
+//    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXArbitraryCorrectedZVertical;
+    // x reference is magnetic north, based on the magnetometer
+//    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXMagneticNorthZVertical;
+    // x reference is north using location sensors: accelerometer, gyroscope, magnetometer
+    CMAttitudeReferenceFrame frame = CMAttitudeReferenceFrameXTrueNorthZVertical;
     
     [self.coreMotionManager startDeviceMotionUpdatesUsingReferenceFrame:frame toQueue:queue withHandler:^(CMDeviceMotion *deviceMotion, NSError *error) {
         /* do work here */
