@@ -16,6 +16,9 @@
 		4125E9821CC5F3B30062BFA3 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4125E9801CC5F3B30062BFA3 /* Fabric.framework */; };
 		4125E9831CC5F3B30062BFA3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4125E9811CC5F3B30062BFA3 /* Crashlytics.framework */; };
 		4125E98C1CC6AC1B0062BFA3 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4125E98B1CC6AC1B0062BFA3 /* dog.jpg */; };
+		4125E9911CC74B460062BFA3 /* lemur_selfie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4125E98E1CC74B460062BFA3 /* lemur_selfie.jpg */; };
+		4125E9921CC74B460062BFA3 /* monkey_smile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4125E98F1CC74B460062BFA3 /* monkey_smile.jpg */; };
+		4125E9931CC74B460062BFA3 /* tiny_pig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4125E9901CC74B460062BFA3 /* tiny_pig.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		4125E9801CC5F3B30062BFA3 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		4125E9811CC5F3B30062BFA3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		4125E98B1CC6AC1B0062BFA3 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		4125E98E1CC74B460062BFA3 /* lemur_selfie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lemur_selfie.jpg; sourceTree = "<group>"; };
+		4125E98F1CC74B460062BFA3 /* monkey_smile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = monkey_smile.jpg; sourceTree = "<group>"; };
+		4125E9901CC74B460062BFA3 /* tiny_pig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiny_pig.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		4125E9671CC53F3B0062BFA3 /* Device Motion Demo */ = {
 			isa = PBXGroup;
 			children = (
+				4125E98D1CC74AF80062BFA3 /* Resources */,
 				4125E96B1CC53F3B0062BFA3 /* AppDelegate.h */,
 				4125E96C1CC53F3B0062BFA3 /* AppDelegate.m */,
 				4125E96E1CC53F3B0062BFA3 /* ViewController.h */,
@@ -76,7 +83,6 @@
 				4125E9741CC53F3B0062BFA3 /* Assets.xcassets */,
 				4125E9761CC53F3B0062BFA3 /* LaunchScreen.storyboard */,
 				4125E9791CC53F3B0062BFA3 /* Info.plist */,
-				4125E98B1CC6AC1B0062BFA3 /* dog.jpg */,
 				4125E9681CC53F3B0062BFA3 /* Supporting Files */,
 			);
 			path = "Device Motion Demo";
@@ -88,6 +94,17 @@
 				4125E9691CC53F3B0062BFA3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4125E98D1CC74AF80062BFA3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4125E98E1CC74B460062BFA3 /* lemur_selfie.jpg */,
+				4125E98F1CC74B460062BFA3 /* monkey_smile.jpg */,
+				4125E9901CC74B460062BFA3 /* tiny_pig.jpg */,
+				4125E98B1CC6AC1B0062BFA3 /* dog.jpg */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4125E98C1CC6AC1B0062BFA3 /* dog.jpg in Resources */,
+				4125E9931CC74B460062BFA3 /* tiny_pig.jpg in Resources */,
+				4125E9911CC74B460062BFA3 /* lemur_selfie.jpg in Resources */,
 				4125E9781CC53F3B0062BFA3 /* LaunchScreen.storyboard in Resources */,
+				4125E9921CC74B460062BFA3 /* monkey_smile.jpg in Resources */,
 				4125E9751CC53F3B0062BFA3 /* Assets.xcassets in Resources */,
 				4125E9731CC53F3B0062BFA3 /* Main.storyboard in Resources */,
 			);
@@ -294,7 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -311,7 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
